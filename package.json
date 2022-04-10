@@ -1,0 +1,65 @@
+{
+	"author": "Kamar Mack <https://github.com/kamarmack>",
+	"bugs": "https://github.com/hats-dev/hats-dev-nextjs/issues",
+	"dependencies": {
+		"gatsby": "^2.15.18",
+		"react": "^16.10.1",
+		"react-dom": "^16.10.1",
+		"smooth-doc": "^5.0.4"
+	},
+	"devDependencies": {
+		"eslint": "^8.11.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-import": "^2.25.4",
+		"eslint-plugin-jest": "^26.1.1",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-promise": "^6.0.0",
+		"prettier": "2.5.1"
+	},
+	"description": "Happy TypeScript CLI",
+	"engines": {
+		"node": ">=11.14"
+	},
+	"homepage": "https://hats.dev",
+	"license": "BSD-3-Clause",
+	"name": "hats-dev-nextjs",
+	"prettier": {
+		"arrowParens": "always",
+		"bracketSpacing": true,
+		"bracketSameLine": true,
+		"printWidth": 80,
+		"quoteProps": "as-needed",
+		"semi": true,
+		"singleQuote": true,
+		"tabWidth": 2,
+		"trailingComma": "all",
+		"useTabs": true
+	},
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/hats-dev/hats-dev-nextjs.git"
+	},
+	"scripts": {
+		"develop": "gatsby develop",
+		"build": "gatsby build",
+		"serve": "gatsby serve",
+		"clean-deps": "rm -rf node_modules",
+		"clean-build": "rm -rf dist",
+		"clean": "npm run clean-deps && npm run clean-build",
+		"lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+		"prelint-fix": "npm run ts-silent-build",
+		"lint-fix": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
+		"prettify": "npx prettier --write .",
+		"validate": "git pull && npm i && npm run lint",
+		"stage": "npm run prettify && git add .",
+		"push": "git push && git push --tags",
+		"precommit": "npm run validate",
+		"commit": "npm run stage && git commit",
+		"postcommit": "npm run push",
+		"preversion": "npm run validate",
+		"version": "npm run stage",
+		"postversion": "npm run build && npm publish"
+	},
+	"version": "1.0.0-alpha.0"
+}
