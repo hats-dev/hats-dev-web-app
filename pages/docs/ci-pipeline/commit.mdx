@@ -1,0 +1,27 @@
+---
+order: 20
+section: CI Pipeline
+title: Commit
+---
+
+# Commit
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+
+## Description
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+
+```
+"prettify": "npx prettier --write .",
+"validate": "git pull && npm i && npm run test && npm run lint",
+"stage": "npm run prettify && git add .",
+"push": "git push && git push --tags",
+"precommit": "npm run validate && doctoc .",
+"commit": "npm run stage && git commit",
+"postcommit": "npm run push",
+```

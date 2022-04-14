@@ -1,0 +1,27 @@
+---
+order: 30
+section: CI Pipeline
+title: Build
+---
+
+# Build
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+
+## Description
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+
+```
+"clean-deps": "rm -rf node_modules",
+"clean-build": "rm -rf dist",
+"clean": "npm run clean-deps && npm run clean-build",
+"predev-build": "npm run clean-build",
+"dev-build": "NODE_ENV=development && tsc -p tsconfig-build.json",
+"prebuild": "npm run clean-build",
+"build": "NODE_ENV=production && tsc -p tsconfig-build.json",
+```
