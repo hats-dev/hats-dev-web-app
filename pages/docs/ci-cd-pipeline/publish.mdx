@@ -1,10 +1,10 @@
 ---
-order: 0
-section: CI Pipeline
-title: Test
+order: 40
+section: CI/CD Pipeline
+title: Publish
 ---
 
-# Test
+# Publish
 
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
 
@@ -17,5 +17,7 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
 
 ```
-"test": "jest",
+"preversion": "npm run validate",
+"version": "auto-changelog -p && npm run stage",
+"postversion": "npm run build && npm publish"
 ```

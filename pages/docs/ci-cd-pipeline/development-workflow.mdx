@@ -1,0 +1,33 @@
+---
+order: -10
+section: CI/CD Pipeline
+title: Overview
+---
+
+# CI/CD Pipeline
+
+HaTs provides an intuitive and extensible starting point for your CI/CD pipeline.
+
+## Development Workflow
+
+By default in HaTs projects, the package.json `scripts` property contains the implementation details for each step along the pipeline (i.e. shell commands, triggers, cadence, and so on).
+
+| Task                                | Pre-configured Node Modules / Command Line Tools |
+| ----------------------------------- | ------------------------------------------------ |
+| 🧯 Test &#10549;                    | ts-jest                                          |
+| ⚖️ Lint &#10549;                    | @typescript-eslint/parser                        |
+| 📐 Enforce Style &#10549;           | prettier                                         |
+| 📝 Prep for Release&#8224; &#10549; | auto-changelog + doctoc                          |
+| ♻️ Pull, Commit, Push &#10549;      | git + gh cli                                     |
+| 🎁 Build&#8224; &#10549;            | tsc                                              |
+| 🚀 Publish&#8224;                   | npm                                              |
+
+<h6 style="text-align: right">
+	&#8224; only applicable when cutting a release version
+</h6>
+
+The most important commands are generally two types of invocations you run:
+
+###
+
+###

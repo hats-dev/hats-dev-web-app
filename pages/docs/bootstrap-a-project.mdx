@@ -1,0 +1,36 @@
+---
+order: 20
+section: Getting Started
+title: Bootstrap a Project
+---
+
+# Bootstrap a Project
+
+Run the `create` command to bootstrap your local and remote repos.
+
+## Interactive Setup (Default)
+
+```bash
+hats create my-cool-lib
+```
+
+## Instant Setup
+
+The `-y` flag instructs HaTs to skip prompts and scaffold your project according to your machine's git configs and HaTs configs. To learn more about the configuration resolution heuristic, refer to the [`hats config` CLI reference](/docs/cli-reference/config).
+
+```bash
+hats create -y my-cool-lib
+```
+
+## Usage Notes
+
+### Target Directory
+
+Execute `hats create` from the directory that you want to be the **parent directory** of your TypeScript project, e.g:
+
+```bash
+cd ~/programming/typescript-projects
+hats create my-cool-lib
+```
+
+The HaTs CLI scaffolds a new folder that contains your TypeScript project inside your current directory. It does **not** turn your current directory into the project (similar to the way that commands such as `npm init` behave for instance).
