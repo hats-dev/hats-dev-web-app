@@ -1,10 +1,10 @@
 ---
-order: 0
-section: CI/CD Pipeline
-title: Test
+order: 20
+section: Development Workflow
+title: Syncing Changes
 ---
 
-# Test
+# Syncing Changes
 
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
 
@@ -17,5 +17,11 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
 
 ```
-"test": "jest",
+"prettify": "npx prettier --write .",
+"validate": "git pull && npm i && npm run test && npm run lint",
+"stage": "npm run prettify && git add .",
+"push": "git push && git push --tags",
+"precommit": "npm run validate && doctoc .",
+"commit": "npm run stage && git commit",
+"postcommit": "npm run push",
 ```

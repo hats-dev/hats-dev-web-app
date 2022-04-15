@@ -1,10 +1,10 @@
 ---
-order: 40
-section: CI/CD Pipeline
-title: Publish
+order: 15
+section: Development Workflow
+title: Enforcing Style
 ---
 
-# Publish
+# Enforcing Style
 
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
 
@@ -17,7 +17,9 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
 
 ```
-"preversion": "npm run validate",
-"version": "auto-changelog -p && npm run stage",
-"postversion": "npm run build && npm publish"
+"ts-silent-build": "tsc --project ./tsconfig.json --noEmit",
+"prelint": "npm run ts-silent-build",
+"lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+"prelint-fix": "npm run ts-silent-build",
+"lint-fix": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
 ```

@@ -6,7 +6,7 @@ module.exports = {
 				author: 'Kamar Mack',
 				description: 'Happy TypeScript CLI',
 				name: 'HaTs',
-				sections: ['Getting Started', 'CI/CD Pipeline', 'CLI Reference'],
+				sections: ['Getting Started', 'Development Workflow', 'CLI Reference'],
 				siteUrl: 'https://hats.dev',
 			},
 		},

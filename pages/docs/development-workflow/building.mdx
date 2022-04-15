@@ -1,10 +1,10 @@
 ---
-order: 10
-section: CI/CD Pipeline
-title: Lint
+order: 30
+section: Development Workflow
+title: Building
 ---
 
-# Lint
+# Building
 
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
 
@@ -17,9 +17,11 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
 
 ```
-"ts-silent-build": "tsc --project ./tsconfig.json --noEmit",
-"prelint": "npm run ts-silent-build",
-"lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-"prelint-fix": "npm run ts-silent-build",
-"lint-fix": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
+"clean-deps": "rm -rf node_modules",
+"clean-build": "rm -rf dist",
+"clean": "npm run clean-deps && npm run clean-build",
+"predev-build": "npm run clean-build",
+"dev-build": "NODE_ENV=development && tsc -p tsconfig-build.json",
+"prebuild": "npm run clean-build",
+"build": "NODE_ENV=production && tsc -p tsconfig-build.json",
 ```

@@ -1,0 +1,62 @@
+---
+order: 30
+section: Getting Started
+title: Project Layout
+---
+
+# Project Layout
+
+The HaTs project structure boosts productivity, promotes good habits, and it just works.
+
+## File System
+
+Each time you bootstrap a project, <a target="_blank" href="https://github.com/hats-dev/hats-scaffold-library">the HaTs TypeScript template</a> on GitHub gets shallow copied. Below is the default architecture generated.
+
+```
+📦project
+ ┣ 📂src
+ ┃ ┣ 📜index.test.ts
+ ┃ ┗ 📜index.ts
+ ┣ 📂tests
+ ┃ ┗ 📜global.tests.ts
+ ┣ 📜.eslintignore
+ ┣ 📜.eslintrc.json
+ ┣ 📜.gitignore
+ ┣ 📜.prettierignore
+ ┣ 📜LICENSE
+ ┣ 📜README.md
+ ┣ 📜package-lock.json
+ ┣ 📜package.json
+ ┣ 📜tsconfig-build.json
+ ┗ 📜tsconfig.json
+```
+
+## Customizaton
+
+During the bootstrapping process, the HaTs CLI customizes each file and directory in your project.
+
+For instance, below are the raw contents of the `tsconfig-build.json` file from the default HaTs template project:
+
+```json
+{
+	"compilerOptions": {
+		"rootDir": "HATS_PATHS_TS_BUILD_ROOT_DIR_PATH"
+	},
+	"exclude": HATS_PATHS_TS_BUILD_EXLUDE_PATHS,
+	"extends": "./tsconfig.json"
+}
+```
+
+Customizable values in template files are identifiable by the prefix `'HATS_'` and written in all caps. The HaTs CLI identifies these placeholders and injects the correct value by merging your default and project-specific configs.
+
+Below is what your final `tsconfig-build.json` file may look like:
+
+```json
+{
+	"compilerOptions": {
+		"rootDir": "./src"
+	},
+	"exclude": ["tests", "src/**/*.test.ts"],
+	"extends": "./tsconfig.json"
+}
+```

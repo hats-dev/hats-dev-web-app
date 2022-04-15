@@ -1,0 +1,50 @@
+---
+order: -10
+section: Development Workflow
+title: CI/CD Pipeline
+---
+
+# CI/CD Pipeline
+
+_"The difference between a senior engineer and a junior engineer is that a senior engineer is obsessed with automation."_
+
+## Overview
+
+Once you're happy with a set of local changes and ready to [push to your remote](/docs/development-workflow/syncing-changes) or [cut a new release](/docs/development-workflow/publishing) for publication, it's critical that your pipeline take the error-prone / repetitive work off your plate.
+
+HaTs provides an intuitive starting point for CI/CD. This design saves you time and enables you focus solely on writing your new features and unit tests.
+
+| Task                                         | Node Modules / Command Line Tools |
+| -------------------------------------------- | --------------------------------- |
+| 🧯 Test &#10549;                             | ts-jest                           |
+| ⚖️ Lint &#10549;                             | @typescript-eslint/parser         |
+| 📐 Enforce Style &#10549;                    | prettier                          |
+| 📝 Prep for Release&#8224; &#10549;          | auto-changelog + doctoc           |
+| ♻️ Sync Local Changes to the Remote &#10549; | git + gh cli                      |
+| 🎁 Build&#8224; &#10549;                     | tsc                               |
+| 🚀 Publish&#8224;                            | npm                               |
+
+<h6 style="text-align: right">
+	&#8224; only applicable if you're cutting a new release
+</h6>
+
+## Executing CI/CD Tasks
+
+In HaTs projects, the package.json `scripts` property contains the implementation details for each of these CI/CD tasks:
+
+- Shell command
+- Triggers
+- Invocation cadence
+
+To execute any of these CI/CD tasks from the command line simply use the `npm run X` syntax.
+
+## Resources
+
+- <a target="_blank" href="https://docs.npmjs.com/cli/v8/using-npm/scripts">
+  	Documentation for npm scripts
+  </a>
+- <a
+  	target="_blank"
+  	href="https://martinfowler.com/articles/branching-patterns.html">
+  	Patterns for Managing Source Code Branches
+  </a> by Martin Fowler
