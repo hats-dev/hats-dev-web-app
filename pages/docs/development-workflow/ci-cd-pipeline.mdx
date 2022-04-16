@@ -14,18 +14,20 @@ Once you're happy with a set of local changes and ready to [push to your remote]
 
 HaTs provides an intuitive starting point for CI/CD. This design saves you time and enables you focus solely on writing your new features and unit tests.
 
-| Task                                         | Node Modules / Command Line Tools |
-| -------------------------------------------- | --------------------------------- |
-| 🧯 Test &#10549;                             | ts-jest                           |
-| ⚖️ Lint &#10549;                             | @typescript-eslint/parser         |
-| 📐 Enforce Style &#10549;                    | prettier                          |
-| 📝 Prep for Release&#8224; &#10549;          | auto-changelog + doctoc           |
-| ♻️ Sync Local Changes to the Remote &#10549; | git + gh cli                      |
-| 🎁 Build&#8224; &#10549;                     | tsc                               |
-| 🚀 Publish&#8224;                            | npm                               |
+| Task                                          | Node Modules / Command Line Tools                                                                                                                                    |
+| --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🧯 Test &#10549;                              | <a target="_blank" href="https://kulshekhar.github.io/ts-jest/">ts-jest</a>                                                                                          |
+| ⚖️ Lint &#10549;                              | <a target="_blank" href="https://npmjs.com/package/@typescript-eslint parser">@typescript-eslint/parser</a>                                                          |
+| 📐 Enforce Style &#10549;                     | <a target="_blank" href="https://prettier.io">prettier</a> + <a target="_blank" href="https://www.npmjs.com/package/doctoc">doctoc</a>&#8225;                        |
+| ♻️ Sync Local Changes to your Remote &#10549; | <a target="_blank" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">git</a> + <a target="_blank" href="https://cli.github.com/manual">gh cli</a> |
+| 📝 Prep for Release&#8224; &#10549;           | <a target="_blank" href="https://www.npmjs.com/package/auto-changelog">auto-changelog</a>&#8225;                                                                     |
+| 🎁 Build&#8224; &#10549;                      | <a target="_blank" href="https://www.npmjs.com/package/typescript">tsc</a>                                                                                           |
+| 🚀 Publish&#8224;                             | <a target="_blank" href="https://docs.npmjs.com/cli/v8/commands/npm">npm</a>                                                                                         |
 
 <h6 style="text-align: right">
-	&#8224; only applicable if you're cutting a new release
+	&#8224; only invoked when cutting a new release
+	<br />
+	&#8225; global npm install required
 </h6>
 
 ## Executing CI/CD Tasks
@@ -38,13 +40,8 @@ In HaTs projects, the package.json `scripts` property contains the implementatio
 
 To execute any of these CI/CD tasks from the command line simply use the `npm run X` syntax.
 
-## Resources
+## Further Reading
 
 - <a target="_blank" href="https://docs.npmjs.com/cli/v8/using-npm/scripts">
   	Documentation for npm scripts
   </a>
-- <a
-  	target="_blank"
-  	href="https://martinfowler.com/articles/branching-patterns.html">
-  	Patterns for Managing Source Code Branches
-  </a> by Martin Fowler

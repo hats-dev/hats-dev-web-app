@@ -10,7 +10,7 @@ The HaTs project structure boosts productivity, promotes good habits, and it jus
 
 ## File System
 
-Each time you bootstrap a project, <a target="_blank" href="https://github.com/hats-dev/hats-scaffold-library">the HaTs TypeScript template</a> on GitHub gets shallow copied. Below is the default architecture generated.
+Each time you bootstrap a project, the HaTs CLI shallow copies our <a target="_blank" href="https://github.com/hats-dev/hats-scaffold-library">TypeScript template repo on GitHub</a>. Below is the default architecture generated.
 
 ```
 📦project
@@ -33,9 +33,9 @@ Each time you bootstrap a project, <a target="_blank" href="https://github.com/h
 
 ## Customizaton
 
-During the bootstrapping process, the HaTs CLI customizes each file and directory in your project.
+During the bootstrapping process, the HaTs CLI customizes each file and directory for your project.
 
-For instance, below are the raw contents of the `tsconfig-build.json` file from the default HaTs template project:
+Take for example the raw contents of the `tsconfig-build.json` file from the default HaTs template project:
 
 ```json
 {
@@ -47,7 +47,7 @@ For instance, below are the raw contents of the `tsconfig-build.json` file from 
 }
 ```
 
-Customizable values in template files are identifiable by the prefix `'HATS_'` and written in all caps. The HaTs CLI identifies these placeholders and injects the correct value by merging your default and project-specific configs.
+Customizable values in template files are identifiable by the prefix `'HATS_'` and written in all caps. The HaTs CLI identifies these placeholders and injects the appropriate values into your project.
 
 Below is what your final `tsconfig-build.json` file may look like:
 

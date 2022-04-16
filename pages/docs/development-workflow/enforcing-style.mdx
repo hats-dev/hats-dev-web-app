@@ -6,20 +6,43 @@ title: Enforcing Style
 
 # Enforcing Style
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+Enforce consistent style patterns with the command `npm run prettify`
 
-## Description
+`package.json`:
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-
+```json
+"prettier": {
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "bracketSameLine": true,
+  "printWidth": 80,
+  "quoteProps": "as-needed",
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": true
+},
+"scripts": {
+  // ...
+  "prettify": "npx prettier --write .",
+  // ...
+}
 ```
-"ts-silent-build": "tsc --project ./tsconfig.json --noEmit",
-"prelint": "npm run ts-silent-build",
-"lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-"prelint-fix": "npm run ts-silent-build",
-"lint-fix": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
-```
+
+## Implementation
+
+HaTs projects are pre-configured to enforce style using <a target="_blank" href="https://prettier.io">prettier</a>.
+
+While enforcing code style may _seem_ immaterial, these consistency refactors carry huge value adds:
+
+- Your git history on file-by-file basis is cleaner.
+- Your team members or contributors can quickly write features locally using whatever idiosyncratic patterns they like, and the final synced changes are automagically standardized.
+
+## Further Reading
+
+- <a
+  	target="_blank"
+  	href="https://medium.com/@nikgraf/why-you-should-enforce-dangling-commas-for-multiline-statements-d034c98e36f8">
+  	Why you should enforce Dangling Commas for Multiline Statements
+  </a> by Nik Graf

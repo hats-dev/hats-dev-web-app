@@ -6,20 +6,43 @@ title: Linting
 
 # Linting
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+Lint your project with the command `npm run lint`
 
-## Description
+`package.json`:
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-
+```json
+"scripts": {
+  // ...
+  "ts-silent-build": "tsc --project ./tsconfig.json --noEmit",
+  "prelint": "npm run ts-silent-build",
+  "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+  "prelint-fix": "npm run ts-silent-build",
+  "lint-fix": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
+  // ...
+}
 ```
-"ts-silent-build": "tsc --project ./tsconfig.json --noEmit",
-"prelint": "npm run ts-silent-build",
-"lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-"prelint-fix": "npm run ts-silent-build",
-"lint-fix": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
+
+## Implementation
+
+HaTs projects are pre-configured to lint using <a target="_blank" href="https://npmjs.com/package/@typescript-eslint parser">@typescript-eslint/parser</a>.
+
+`.eslintrc.json`:
+
+```json
+{
+	// ...
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"tsconfigRootDir": ".",
+		"project": ["tsconfig.json"]
+	}
+}
 ```
+
+Notice that the `parserOptions.project` property points to your project's `tsconfig.json` file. This setting enables your linting process to catch TypeScript warnings and errors, most notably `strictNullChecks` and `noImplicitAny`.
+
+## Further Reading
+
+- <a target="_blank" href="https://eslint.org/">
+  	ESLint Documentation
+  </a>

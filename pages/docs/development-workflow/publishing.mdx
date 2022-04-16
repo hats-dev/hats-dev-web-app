@@ -4,20 +4,46 @@ section: Development Workflow
 title: Publishing
 ---
 
+import { Mermaid } from 'mdx-mermaid/lib/Mermaid';
+
 # Publishing
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+Publish a new version with the command `npm version X`
 
-## Description
+`package.json`:
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-
+```json
+"main": "dist/index.js",
+"name": "your-module",
+"scripts": {
+  // ...
+  "version": "auto-changelog -p && npm run stage-local-changes",
+  "postversion": "npm run push-local-changes && npm run build && npm publish --access=restricted"
+},
+"types": "dist/index.d.ts",
+"version": "your-version"
 ```
-"preversion": "npm run validate",
-"version": "auto-changelog -p && npm run stage",
-"postversion": "npm run build && npm publish"
-```
+
+## Implementation
+
+HaTs projects are pre-configured to run your [Release Preparation](/docs/development-workflow/prepping-releases) CI Tasks before you publish a new major, minor, patch, or pre- release version.
+
+<Mermaid
+	chart={`graph TD;
+  id10[Cut New Release]-->id20{{npm Completes Background Processes...}};
+  id20{{npm Completes Background Processes...}}-->id30[Prep for Release];
+  id30[Prep for Release]-->id35[Commit Changes and Push to Remote];
+  id35[Commit Changes and Push to Remote]-->id40[Compile Project to JavaScript];
+  id40[Compile Project to JavaScript]-->id50[Publish to npm Registry];
+	;
+`}
+/>
+
+## Further Reading
+
+- <a target="_blank" href="https://docs.npmjs.com/cli/v8/commands/npm-version">
+  	Documentation for npm version
+  </a>
+- <a target="_blank" href="https://docs.npmjs.com/cli/v8/commands/npm-publish">
+  	Documentation for npm publish
+  </a>

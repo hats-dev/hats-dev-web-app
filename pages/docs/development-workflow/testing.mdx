@@ -6,16 +6,67 @@ title: Testing
 
 # Testing
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+Execute unit test suites with the command `npm run test`
 
-## Description
+`package.json`:
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-
+```json
+"jest": {
+	"errorOnDeprecated": true,
+	"preset": "ts-jest",
+	"testEnvironment": "node",
+	"verbose": true
+},
+"scripts": {
+	// ...
+	"test": "jest",
+	// ...
+}
 ```
-"test": "jest",
+
+## Implementation
+
+HaTs projects come pre-configured with a <a target="_blank" href="https://kulshekhar.github.io/ts-jest/">ts-jest</a> integration as well as `tsconfig-build.json` settings that instruct the compiler to ignore test files when emitting your final JavaScript build.
+
+Out of the box, HaTs supports two types of test suites for your project:
+
+### <u>Isolated Tests</u>
+
+Isolated tests belong inside the "`rootDir`" of your module, e.g. `./src/**`, directly next the source file you're testing.
+
+### <u>System Tests</u>
+
+System tests belong inside the top-level `./tests` directory at the root of your project. These tests for instance can help you model flow control invoking multiple parts of your codebase.
+
+## Example
+
+The <a target="_blank" href="https://github.com/hats-dev/hats-cli">HaTs CLI</a> itself contains several examples of writing test suites.
+
+`src/fs/reads.test.ts`:
+
+```typescript
+import getFileStr from './reads';
+import { getCwd } from './path';
+import { logger } from '../console/logger';
+
+describe('reads', function () {
+	test('getFileStr', function () {
+		return (async function () {
+			const path = `${getCwd()}/tests/reads.test.txt`;
+			const read_test_file_str = `Hello world
+`;
+			const str = await getFileStr({ path });
+			type T = typeof str;
+			expect<T>(str).toBe<T>(read_test_file_str);
+		})();
+	});
+});
 ```
+
+**Pro Tip**: Adding explicit type annotations to the `expect` statements as shown above combines safety checks from jest with safety checks from your linter.
+
+## Further Reading
+
+- <a target="_blank" href="https://jestjs.io">
+  	Jest Documentation
+  </a>

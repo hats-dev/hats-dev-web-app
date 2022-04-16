@@ -6,20 +6,23 @@ title: Prepping Releases
 
 # Prepping Releases
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+Autogenerate a changelog with the command `auto-changelog -p`&#8224;
 
-## Description
+<h6 style="text-align: right">&#8224; global npm install required</h6>
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+## Implementation
 
-```
-"ts-silent-build": "tsc --project ./tsconfig.json --noEmit",
-"prelint": "npm run ts-silent-build",
-"lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-"prelint-fix": "npm run ts-silent-build",
-"lint-fix": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
-```
+The recommended changelog generator for HaTs projects is <a target="_blank" href="https://www.npmjs.com/package/auto-changelog">auto-changelog</a>.
+
+Once you're ready to cut a new release, this program references the set of git commits that have occurred since you released the last version of your project. This information is organized and formatted into a `CHANGELOG.md` file at the root of your project.
+
+**Pro Tip**: Writing quality commit messages and adhering to Semantic Versioning conventions will both increase the quality of your changelog.
+
+## Further Reading
+
+- <a target="_blank" href="https://semver.org/">
+  	Semantic Versioning Documentation
+  </a>
+- <a target="_blank" href="https://keepachangelog.com/en/1.0.0/">
+  	Keep a Changelog Documentation
+  </a>

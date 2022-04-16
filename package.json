@@ -3,6 +3,8 @@
 	"bugs": "https://github.com/hats-dev/hats-dev-nextjs/issues",
 	"dependencies": {
 		"gatsby": "^2.15.18",
+		"mdx-mermaid": "^1.2.2",
+		"mermaid": "^9.0.0",
 		"react": "^16.10.1",
 		"react-dom": "^16.10.1",
 		"smooth-doc": "^5.0.4"

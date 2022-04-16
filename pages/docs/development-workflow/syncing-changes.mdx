@@ -4,24 +4,56 @@ section: Development Workflow
 title: Syncing Changes
 ---
 
+import { Mermaid } from 'mdx-mermaid/lib/Mermaid';
+
 # Syncing Changes
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+Sync local changes to your remote with the command `npm run sync`
 
-## Description
+`package.json`:
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-
+```json
+"scripts": {
+  // ...
+  "validate": "git pull --ff-only && npm i && npm run test && npm run lint",
+  "stage-local-changes": "doctoc . && npm run prettify && git add .",
+  "push-local-changes": "git push && git push --tags",
+  "presync": "npm run validate",
+  "sync": "npm run stage-local-changes && git commit",
+  "postsync": "npm run push-local-changes",
+  // ...
+}
 ```
-"prettify": "npx prettier --write .",
-"validate": "git pull && npm i && npm run test && npm run lint",
-"stage": "npm run prettify && git add .",
-"push": "git push && git push --tags",
-"precommit": "npm run validate && doctoc .",
-"commit": "npm run stage && git commit",
-"postcommit": "npm run push",
-```
+
+## Implementation
+
+HaTs projects are pre-configured to run your [Testing](/docs/development-workflow/testing), [Linting](/docs/development-workflow/linting), and [Style Enforcement](/docs/development-workflow/enforcing-style) CI Tasks during **each** commit.
+
+<Mermaid
+	chart={`graph TD;
+  id10[Complete New Features]-->id20[Fetch Updates Pushed to Remote];
+  id20[Fetch Updates Pushed to Remote]-.->id30[Fast-Forward Merge];
+  id20[Fetch Updates Pushed to Remote]-.->id40[Resolve Merge Conflicts];
+  id30[Fast-Forward Merge]-->id50[Validate New Features];
+  id40[Resolve Merge Conflicts]-->id50[Validate New Features];
+  id50[Validate New Features]-->id65[Standardize Code Style];
+  id65[Standardize Code Style]-->id60[Commit Changes];
+  id60[Commit Changes]-->id70[Push to Remote];
+`}
+/>
+
+This workflow carries countless benefits, most notably:
+
+- Your project always maintains a healthy master branch.
+- Resolving merge conflicts is as fast and painless as possible.
+
+## Further Reading
+
+- <a target="_blank" href="https://git-scm.com/book/en/v2">
+  	Pro Git
+  </a> by Scott Chacon and Ben Straub
+- <a
+  	target="_blank"
+  	href="https://martinfowler.com/articles/branching-patterns.html">
+  	Patterns for Managing Source Code Branches
+  </a> by Martin Fowler
