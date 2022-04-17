@@ -5,12 +5,24 @@ title: paths.ts-build-root-dir-path
 
 # paths.ts-build-root-dir-path
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+The name of the folder that TypeScript should be treat as the root directory <u>**when building**</u> your project
+
+## Default Value
+
+`src/`
 
 ## Description
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+The value of this config is assigned to the `compilerOptions.rootDir` property in your `tsconfig-build.json` file.
+
+If you decide to change this value, follow these guidelines:
+
+1. You **must** also update your [`paths.ts-build-exclude-paths`](/docs/cli-reference/paths-ts-build-exclude-paths/) value
+1. You **must not** use a name that collides with an existing directory in your project, such as `dist/` or `tests/`
+1. You **should** use a descriptive name such as `ts/` to indicates that the folder contains your TypeScript source code
+
+## Example Update
+
+```
+$ hats config paths.ts-build-root-dir-path "ts/"
+```

@@ -5,12 +5,20 @@ title: paths.types-dts-path
 
 # paths.types-dts-path
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+The path to the declaration file for your module
+
+## Default Value
+
+`dist/index.d.ts`
 
 ## Description
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+The value of this config is assigned to the `types` property in your `package.json` file.
+
+You should **only** change this value in tandem with an update to your [`paths.build-dir-path`](/docs/cli-reference/paths-build-dir-path/) config.
+
+## Example Update
+
+```
+$ hats config paths.types-dts-path "lib/index.d.ts"
+```

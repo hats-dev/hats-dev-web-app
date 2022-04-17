@@ -5,12 +5,25 @@ title: paths.ts-build-exclude-paths
 
 # paths.ts-build-exclude-paths
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+Glob patterns that TypeScript should exclude when compiling your project
+
+> **Note**: To update this value, provide your Glob patterns as a comma separated list.
+
+## Default Value
+
+`tests`,`src/**/*.test.ts`
 
 ## Description
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+The value of this config is assigned to the `exclude` property in your `tsconfing-build.json` file.
+
+Typically, you should **only** change this value:
+
+1. In tandem with an update to your [`paths.ts-build-root-dir-path`](/docs/cli-reference/paths-ts-build-root-dir-path/) config
+1. In order to add additional glob patterns for your test files
+
+## Example Update
+
+```
+$ hats config paths.ts-build-exclude-paths "tests,src/**/*.test.ts,src/**/*.spec.ts"
+```

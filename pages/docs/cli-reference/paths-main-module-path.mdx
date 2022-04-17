@@ -5,12 +5,20 @@ title: paths.main-module-path
 
 # paths.main-module-path
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+The path to the JavaScript file serving as the entry point for your module
+
+## Default Value
+
+`dist/index.js`
 
 ## Description
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+The value of this config is assigned to the `main` property in your `package.json` file.
+
+You should **only** change this value in tandem with an update to your [`paths.build-dir-path`](/docs/cli-reference/paths-build-dir-path/) config.
+
+## Example Update
+
+```
+$ hats config paths.main-module-path "lib/index.js"
+```
