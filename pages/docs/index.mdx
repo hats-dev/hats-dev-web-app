@@ -4,6 +4,8 @@ section: Getting Started
 title: Quick Start
 ---
 
+import hatsLogoURL from '../../images/hats-logo.png';
+
 <br />
 
 # Welcome to Happy TypeScript!
@@ -14,7 +16,7 @@ Let's change your TypeScript programming from 😢 to 😎
 
 1. Ensure your machine has the necessary [System Requirements](/docs/system-requirements/) configured
 
-2. **Globally** install the <a target="_blank" href="https://npmjs.com/package/hats-cli">HaTs CLI</a>
+2. **Globally** install the <a target="_blank" rel="noreferrer" href="https://npmjs.com/package/hats-cli">HaTs CLI</a>
 
 ```bash
 npm i -g hats-cli
@@ -36,29 +38,41 @@ Creating your first large TypeScript library from scratch is daunting and time c
 1. **Safeguards against bugs and inconsistent style**
 1. **Automations for version releases**
 
-Only after these pre-requisites are set up, and working in concert, can you make progress on your problem domain. Happy TypeScript (aka `HaTs`) dramatically speeds up this process.
+Only after these pre-requisites are set up, and working in concert, can you make progress on your problem domain.
 
-For more background on why and how HaTs came to be, check out this <a target="_blank" href="https://themackbook.com/blogs/introducing-hats">blog post</a>.
+This is where Happy TypeScript (aka `HaTs`) comes in.
+
+<img
+	src={hatsLogoURL}
+	style={{
+		width: '100%',
+		objectFit: 'contain',
+		borderRadius: '0.5em',
+	}}
+	alt="HaTs Logo"
+/>
+
+For the full story on why and how HaTs came to be, check out this <a target="_blank" rel="noreferrer" href="https://kamar.codes/posts/introducing-happy-typescript">blog post</a>.
 
 ## Use Case for HaTs
 
-HaTs helps you bootstrap **server-side TypeScript libraries** that target NodeJS runtimes.
+HaTs helps you bootstrap TypeScript libraries that target **server-side NodeJS**.
 
-Frontend projects, e.g. React sites, are beyond the scope of HaTs. If you're looking to write a TypeScript app for the frontend, good HaTs alternatives include <a target="_blank" href="https://nextjs.org/docs/basic-features/typescript">create-next-app</a> and <a  target="_blank" href="https://tsdx.io">tsdx</a>, just to name a few.
+Frontend projects, e.g. React sites, are beyond the scope of HaTs. If you're looking to write a TypeScript app for the frontend, good HaTs alternatives include <a target="_blank" rel="noreferrer" href="https://nextjs.org/docs/basic-features/typescript">create-next-app</a> and <a  target="_blank" rel="noreferrer" href="https://tsdx.io">tsdx</a>, just to name a few.
 
 ## Note for Windows and Linux users
 
-Currently only MacOS is officially supported.
+Currently only MacOS is tested and officially supported.
 
-Official Windows and Linux support is releasing ASAP. Follow the <a target="_blank" href="https://twitter.com/happytypescript">HaTs Twitter account</a> to stay updated.
+Official Windows and Linux support is releasing ASAP. Follow the <a target="_blank" rel="noreferrer" href="https://twitter.com/happytypescript">HaTs Twitter account</a> to stay updated.
 
 ## Contributing
 
-- PRs are welcome! To propose a new feature or bug fix, see the <a target="_blank" href="https://github.com/hats-dev/hats-cli/blob/master/CONTRIBUTING.md">Contributing Guidelines</a>.
+- PRs are welcome! To propose a new feature or bug fix, see the <a target="_blank" rel="noreferrer" href="https://github.com/hats-dev/hats-cli/blob/master/CONTRIBUTING.md">Contributing Guidelines</a>.
 
 ## Release Notes
 
-- **Source Code**: <a target="_blank" href="https://github.com/hats-dev/hats-cli">GitHub</a>, <a target="_blank" href="https://npmjs.com/package/hats-cli">npm</a>
-- **Changelog**: <a target="_blank" href="https://github.com/hats-dev/hats-cli/blob/master/CHANGELOG.md">V1.x</a>
-- **Author**: <a target="_blank" href="https://github.com/kamarmack">Kamar Mack</a>
-- **License**: <a target="_blank" href="https://github.com/hats-dev/hats-cli/blob/master/LICENSE">BSD-3-Clause</a>
+- **Source Code**: <a target="_blank" rel="noreferrer" href="https://github.com/hats-dev/hats-cli">GitHub</a>, <a target="_blank" rel="noreferrer" href="https://npmjs.com/package/hats-cli">npm</a>
+- **Changelog**: <a target="_blank" rel="noreferrer" href="https://github.com/hats-dev/hats-cli/blob/master/CHANGELOG.md">V1.x</a>
+- **Author**: <a target="_blank" rel="noreferrer" href="https://github.com/kamarmack">Kamar Mack</a>
+- **License**: <a target="_blank" rel="noreferrer" href="https://github.com/hats-dev/hats-cli/blob/master/LICENSE">BSD-3-Clause</a>

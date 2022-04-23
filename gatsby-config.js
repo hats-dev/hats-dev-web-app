@@ -8,6 +8,7 @@ module.exports = {
 				name: 'HaTs',
 				sections: ['Getting Started', 'Development Workflow', 'CLI Reference'],
 				siteUrl: 'https://hats.dev',
+				trailingSlash: 'always',
 			},
 		},
 	],
