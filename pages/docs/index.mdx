@@ -8,13 +8,26 @@ import hatsLogoURL from '../../images/hats-logo.png';
 
 <br />
 
-# Welcome to Happy TypeScript!
+# Welcome to the HaTs Documentation
 
-Let's change your TypeScript programming from 😢 to 😎
+HaTs will change your TypeScript development from tedious, confusing, and frustrating 😢 into something simple, efficient, and fun 😎
+
+<img
+	src={hatsLogoURL}
+	style={{
+		width: '100%',
+		objectFit: 'contain',
+		borderRadius: '0.5em',
+		marginTop: '1em',
+	}}
+	alt="HaTs Logo"
+/>
+
+_For the full story on why and how HaTs came to be, check out this <a target="_blank" rel="noreferrer" href="https://mackbook.io/posts/introducing-hats">launch blog post</a>_ 🚀
 
 ## Quick Start
 
-1. Ensure your machine has the necessary [System Requirements](/docs/system-requirements/) configured
+1. Ensure your machine has the necessary [System Requirements](/docs/system-requirements) configured
 
 2. **Globally** install the <a target="_blank" rel="noreferrer" href="https://npmjs.com/package/hats-cli">HaTs CLI</a>
 
@@ -32,39 +45,31 @@ hats create my-ts-library
 
 Creating your first large TypeScript library from scratch is daunting and time consuming, even for experienced programmers. In order to make the most of the rich TypeScript ecosystem in your projects, you, at minimum, must have the following in place:
 
-1. **Global environment (i.e. Machine-level) configuration**
-1. **Local environment (i.e. Project-level) configuration**
-1. **Organization for your directories and files**
-1. **Safeguards against bugs and inconsistent style**
-1. **Automations for version releases**
+- Global environment (i.e. _machine-level_) configuration
+- Local environment (i.e. _project-level_) configuration
+- Organization for your directories and files
+- Safeguards against bugs and inconsistent style
+- Automations for version releases
 
 Only after these pre-requisites are set up, and working in concert, can you make progress on your problem domain.
 
-This is where Happy TypeScript (aka `HaTs`) comes in.
-
-<img
-	src={hatsLogoURL}
-	style={{
-		width: '100%',
-		objectFit: 'contain',
-		borderRadius: '0.5em',
-	}}
-	alt="HaTs Logo"
-/>
-
-For the full story on why and how HaTs came to be, check out this <a target="_blank" rel="noreferrer" href="https://kamar.codes/posts/introducing-happy-typescript">blog post</a>.
+This is where **HaTs** (short for _Happy TypeScript_) comes in.
 
 ## Use Case for HaTs
 
-HaTs helps you bootstrap TypeScript libraries that target **server-side NodeJS**.
+HaTs is a command line tool for TypeScript authors that preconfigures your TS projects for a smooth development workflow.
 
-Frontend projects, e.g. React sites, are beyond the scope of HaTs. If you're looking to write a TypeScript app for the frontend, good HaTs alternatives include <a target="_blank" rel="noreferrer" href="https://nextjs.org/docs/basic-features/typescript">create-next-app</a> and <a  target="_blank" rel="noreferrer" href="https://tsdx.io">tsdx</a>, just to name a few.
+Its goal is to **save you precious dev time** and **protect your mental real estate**.
 
-## Note for Windows and Linux users
+> **Note**: Currently, HaTs can only be used to create TypeScript libraries that target _server-side NodeJS_. Frontend projects, e.g. React sites, are not supported yet.
 
-Currently only MacOS is tested and officially supported.
+If you're looking to write TypeScript for frontend, good HaTs alternatives include <a target="_blank" rel="noreferrer" href="https://nextjs.org/docs/basic-features/typescript">create-next-app</a> and <a  target="_blank" rel="noreferrer" href="https://tsdx.io">tsdx</a>, just to name a few.
 
-Official Windows and Linux support is releasing ASAP. Follow the <a target="_blank" rel="noreferrer" href="https://twitter.com/happytypescript">HaTs Twitter account</a> to stay updated.
+## Windows and Linux users
+
+Currently only MacOS is tested and officially supported. Official Windows and Linux support is releasing ASAP.
+
+⭐ Star the <a target="_blank" rel="noreferrer" href="https://github.com/hats-dev/hats-cli">main repo on GitHub</a> to stay updated.
 
 ## Contributing
 
