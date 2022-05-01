@@ -49,17 +49,12 @@
 		"clean-deps": "rm -rf node_modules",
 		"clean-build": "rm -rf public && rm -rf .cache",
 		"clean": "npm run clean-deps && npm run clean-build",
-		"lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-		"lint-fix": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
 		"prettify": "npx prettier --write .",
-		"validate": "git pull && npm i && npm run lint",
 		"stage-local-changes": "npm run prettify && git add .",
 		"push-local-changes": "git push && git push --tags",
-		"presync": "npm run validate",
 		"sync": "npm run stage-local-changes && git commit",
 		"postsync": "npm run push-local-changes",
-		"preversion": "npm run validate",
-		"version": " echo 'Missing changelog automation' && npm run stage-local-changes",
+		"version": "echo 'Missing changelog automation' && npm run stage-local-changes",
 		"postversion": "npm run push-local-changes && npm run build && echo 'Missing deployment script'"
 	},
 	"version": "1.0.0-alpha.0"
