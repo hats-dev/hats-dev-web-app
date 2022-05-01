@@ -195,12 +195,15 @@ function PrevNextLinks(props) {
 	return (
 		<SiblingNav>
 			{prev && (
-				<SiblingNavLink type="previous" to={prev.fields.slug}>
+				<SiblingNavLink
+					type="previous"
+					to={prev.fields.slug.replace(/\/$/, '')}
+				>
 					{prev.fields.title}
 				</SiblingNavLink>
 			)}
 			{next && (
-				<SiblingNavLink type="next" to={next.fields.slug}>
+				<SiblingNavLink type="next" to={next.fields.slug.replace(/\/$/, '')}>
 					{next.fields.title}
 				</SiblingNavLink>
 			)}
