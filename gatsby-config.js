@@ -7,7 +7,7 @@ module.exports = {
 				baseDirectory: __dirname,
 				description:
 					'HaTs is a super easy tool that improves your TypeScript development workflow.',
-				githubRepositoryURL: 'https://github.com/hats-dev/hats-dev-nextjs',
+				githubRepositoryURL: 'https://github.com/hats-dev/hats-dev-web-app',
 				name: 'HaTs',
 				navItems: [{ title: 'Home', url: '/docs/v1' }],
 				sections: ['Getting Started', 'Development Workflow', 'CLI Reference'],
