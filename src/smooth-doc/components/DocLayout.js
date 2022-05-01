@@ -151,6 +151,8 @@ const MenuButton = styled.button`
 const Footer = styled.div`
 	margin-top: 3em;
 	text-align: center;
+	font-weight: 300;
+	color: on-background-light;
 	${up(
 		'md',
 		css`
@@ -162,7 +164,7 @@ const Footer = styled.div`
 const AuthorLink = styled.aBox`
 	font-size: 18;
 	transition: fast;
-	text-decoration: underline;
+	text-decoration: none;
 	color: on-background-primary;
 
 	&:hover {
@@ -243,14 +245,11 @@ export function DocLayout({ children, tableOfContents, editLink, ...props }) {
 							<PrevNextLinks {...sideNav} />
 						</Article>
 						<hr />
-						<Footer
-							mt={{
-								_: 8,
-							}}
-							textAlign={'center'}
-						>
+						<Footer textAlign={'center'}>
 							<p>
-								Happy TypeScript ©{year} – Created by&nbsp;
+								Happy TypeScript
+								<br />©{year}
+								&nbsp;
 								<AuthorLink
 									target="_blank"
 									rel="noreferrer"

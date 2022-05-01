@@ -1,3 +1,14 @@
+# Gatsby
 .cache
 public
 node_modules
+
+# Logs
+firebase-debug.log*
+firebase-debug.*.log*
+
+# Firebase cache
+.firebase/
+
+# Firebase config
+.firebaserc

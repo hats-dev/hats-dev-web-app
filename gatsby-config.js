@@ -9,11 +9,11 @@ module.exports = {
 					'HaTs is a super easy tool that improves your TypeScript development workflow.',
 				githubRepositoryURL: 'https://github.com/hats-dev/hats-dev-nextjs',
 				name: 'HaTs',
-				navItems: [{ title: 'Home', url: '/docs' }],
+				navItems: [{ title: 'Home', url: '/docs/v1' }],
 				sections: ['Getting Started', 'Development Workflow', 'CLI Reference'],
 				siteUrl: 'https://hats.dev',
-				trailingSlash: 'never',
 			},
 		},
+		'gatsby-plugin-remove-trailing-slashes',
 	],
 };

@@ -1,0 +1,21 @@
+{
+	"hosting": {
+		"cleanUrls": true,
+		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+		"public": "public",
+		"redirects": [
+			{
+				"source": "/",
+				"destination": "/docs/v1",
+				"type": 301
+			},
+			{
+				"source": "/docs",
+				"destination": "/docs/v1",
+				"type": 301
+			}
+		],
+		"site": "hats-dev",
+		"trailingSlash": false
+	}
+}
