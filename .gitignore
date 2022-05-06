@@ -1,4 +1,6 @@
 # Gatsby
+.env.development
+.env.production
 .cache
 public
 node_modules

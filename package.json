@@ -3,6 +3,7 @@
 	"bugs": "https://github.com/hats-dev/hats-dev-web-app/issues",
 	"dependencies": {
 		"gatsby": "^2.15.18",
+		"gatsby-plugin-google-gtag": "^4.13.0",
 		"mdx-mermaid": "^1.2.2",
 		"mermaid": "^9.0.0",
 		"react": "^16.10.1",

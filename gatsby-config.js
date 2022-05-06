@@ -15,5 +15,12 @@ module.exports = {
 			},
 		},
 		'gatsby-plugin-remove-trailing-slashes',
+		{
+			resolve: 'gatsby-plugin-google-gtag',
+			options: {
+				trackingIds: [process.env.GATSBY_PUBLIC_GA_ID],
+				pluginConfig: { head: true },
+			},
+		},
 	],
 };
