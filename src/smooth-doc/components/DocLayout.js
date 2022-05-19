@@ -256,7 +256,7 @@ export function DocLayout({ children, tableOfContents, editLink, ...props }) {
 								<AuthorLink
 									target="_blank"
 									rel="noreferrer"
-									href="https://mackbook.io"
+									href="https://kamar.blog"
 								>
 									👨🏾‍💻 Kamar Mack
 								</AuthorLink>
